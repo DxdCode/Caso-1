@@ -1,11 +1,21 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Login from "./components/auth/Login"
+import Home from "./components/Home"
+import Register from "./components/auth/Register"
+import Dashboard from "./components/Dashboard"
 
 function App() {
   return (
-    <div>
-        <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+
+
+      </Routes>
+    </BrowserRouter>
   )
 }
 
