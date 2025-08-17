@@ -14,7 +14,7 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const { fetchDataBackend } = useFetch()
-  const { setToken } = storeAuth()
+  const { setToken,setNombre,setApellido,setEmail } = storeAuth()
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const loginUser = async (data) => {
@@ -29,6 +29,10 @@ function Login() {
 
       if (response?.token) {
         setToken(response.token);
+        setNombre(response.nombre);
+        setApellido(response.apellido);
+        setEmail(response.email)
+
         toast.success(response?.msg || "Login Correcto");
         navigate("/dashboard");
       } else {

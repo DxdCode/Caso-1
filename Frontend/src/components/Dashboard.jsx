@@ -1,21 +1,21 @@
-import React from 'react';
 import { User } from 'lucide-react';
+import storeAuth from '../context/storeAuth';
+import Nav from './Nav';
 
 function Dashboard() {
+  const nombre = storeAuth(state => state.nombre);
+  const apellido = storeAuth(state => state.apellido);
+
   return (
     <div className="min-h-screen bg-base">
       {/* Navbar superior */}
-      <nav className="w-full bg-card px-6 py-4 flex items-center justify-between shadow-md">
-        <h1 className="text-2xl font-bold text-main">Gestión de Matrículas</h1>
-        <div className="flex items-center gap-3">
-          <User size={28} className="text-primary" />
-          <span className="font-semibold text-main">David</span>
-        </div>
-      </nav>
+      <div>
+        <Nav></Nav>
+      </div>
 
       {/* Bienvenida */}
       <header className="px-6 py-8">
-        <h2 className="text-3xl font-bold text-main">Bienvenido, David 👋</h2>
+        <h2 className="text-3xl font-bold text-sec">Bienvenido - {nombre} {apellido} 👋</h2>
         <p className="text-sec mt-2">
           Administra tu plataforma de manera rápida y sencilla
         </p>

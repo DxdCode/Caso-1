@@ -26,6 +26,7 @@ function Register() {
             if (!response) {
                 toast.error(response?.msg || "Error al registrarse")
             }
+            navigate("/login")
         } catch (error) {
             toast.error(error.response?.data?.msg)
         } finally {
@@ -67,7 +68,7 @@ function Register() {
                                 {...register("nombre", { required: "El nombre es obligatorio" })}
                             />
                             {errors.nombre && (
-                                <span className="text-sm text-error p-1 rounded mt-1">{errors.email.message}</span>
+                                <span className="text-sm text-error rounded mt-1">{errors.email.message}</span>
                             )}
                         </label>
 
@@ -83,7 +84,7 @@ function Register() {
 
                             />
                             {errors.apellido && (
-                                <span className="text-sm text-error p-1 rounded mt-1">{errors.email.message}</span>
+                                <span className="text-sm text-error rounded mt-1">{errors.email.message}</span>
                             )}
                         </label>
 
@@ -98,7 +99,7 @@ function Register() {
 
                             />
                             {errors.email && (
-                                <span className="text-sm text-error p-1 rounded mt-1">{errors.email.message}</span>
+                                <span className="text-sm text-error rounded mt-1">{errors.email.message}</span>
                             )}
                         </label>
 

@@ -6,8 +6,8 @@ function ButtonRegresar() {
 
   // Definir colores según la página
   const styles = {
-    '/register': 'bg-[#8B5CB1] text-white  top-3 sm:top-30',
-    '/login': 'bg-primary text-white  top-[10%] sm:top-50',
+    '/register': 'bg-[#8B5CB1] text-white  top-0 sm:top-30',
+    '/login': 'bg-primary text-white  top-[6%] sm:top-50',
   };
 
   // Color por defecto si no coincide la ruta

@@ -33,13 +33,13 @@ const login = async (req, res) => {
     if (!verificarPasswordBDD) return res.status(400).json({ msg: "Contraseña incorrecta" });
     
     // Extraer datos
-    const { nombre, apellido, _id } = usuarioBDD;
+    const { nombre, apellido,email:usuarioEmail, _id } = usuarioBDD;
     
     // Crear Token
     const token = crearTokenJWT(usuarioBDD._id)
 
-    // Responder con la informacion del usuario
-    res.status(200).json({token,nombre,apellido,_id})
+    // Respuesta
+    res.status(200).json({token,nombre,apellido,email:usuarioEmail,_id})
 }
 
 export {
