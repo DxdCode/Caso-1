@@ -17,7 +17,7 @@ function Home() {
       {/* Contenedor*/}
       <div className="w-full max-w-4xl z-10 relative">
         {/* Titulo con iconos */}
-        <div className="text-center flex flex-1 flex-col pt-10">
+        <div className="text-center flex flex-1 flex-col pt-4">
           <h1 className="text-4xl py-5 font-bold text-main sm:text-[3em]">
             Bienvenido 👋 <br />
             <span className="text-sec">Gestión de Matrículas</span>
@@ -34,7 +34,7 @@ function Home() {
         </div>
 
         {/* Botones con iconos */}
-        <div className="flex flex-col px-6 sm:px-12 sm:flex-row justify-center sm:justify-evenly gap-4 pt-6">
+        <div className="flex flex-col px-6 py-6 sm:px-12 sm:flex-row justify-center sm:justify-evenly gap-4 pt-6">
           <Link to={"/login"} className="cursor-pointer bg-primary text-terc py-3 text-base px-6 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 hover:scale-105 transition transform shadow-md sm:text-lg">
             <LogIn size={20} />
             Iniciar Sesión
