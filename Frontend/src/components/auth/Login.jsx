@@ -18,7 +18,6 @@ function Login() {
   return (
     <section className="h-screen bg-base flex flex-col md:flex-row">
       {/* Imagen lateral */}
-      <ButtonRegresar></ButtonRegresar>
       <div className="hidden md:flex w-1/2 bg-[#CFEAFD] relative items-center justify-center overflow-hidden">
         <div className="absolute -top-20 -left-20 w-72 h-72 bg-blue-200 rounded-full"></div>
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-300 rounded-full"></div>
@@ -31,6 +30,7 @@ function Login() {
         <div className="absolute -top-16 -left-10 w-24 h-24 bg-blue-400 rounded-full z-0"></div>
         <div className="absolute bottom-0 right-0 w-32 h-32 bg-blue-200 rounded-full z-0"></div>
 
+      <ButtonRegresar></ButtonRegresar>
         <div className="w-full max-w-md bg-card p-8 rounded-2xl shadow-lg relative z-10">
           <h2 className="text-3xl font-bold text-center mb-6 text-sec">
             Iniciar Sesión

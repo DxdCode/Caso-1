@@ -17,7 +17,7 @@ function Home() {
       {/* Contenedor*/}
       <div className="w-full max-w-4xl z-10 relative">
         {/* Titulo con iconos */}
-        <div className="text-center">
+        <div className="text-center flex flex-1 flex-col pt-10">
           <h1 className="text-4xl py-5 font-bold text-main sm:text-[3em]">
             Bienvenido 👋 <br />
             <span className="text-sec">Gestión de Matrículas</span>
