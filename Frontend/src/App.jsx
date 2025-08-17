@@ -18,7 +18,8 @@ function App() {
         </Route>
         {/* RUTAS PRIVADAS */}
         <Route path="/dashboard" element={<ProtectedRoute><Dashboard/></ProtectedRoute>}>
-        
+          <Route index element={<Dashboard />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,26 +1,41 @@
 import React, { useState } from 'react';
 import { UserPlus, Eye, EyeOff } from 'lucide-react';
 import ejemploImg from "../../assets/register.png";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router';
 import ButtonRegresar from './ButtonRegresar';
+import useFetch from '../../hooks/useFetch';
+import { useForm } from 'react-hook-form';
+import { toast, ToastContainer } from 'react-toastify';
 
 function Register() {
-    const [nombre, setNombre] = useState('');
-    const [apellido, setApellido] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate()
+    const [loading, setLoading] = useState(false)
+    const { fetchDataBackend } = useFetch()
+    const { register, handleSubmit, formState: { errors } } = useForm()
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Nombre:', nombre);
-        console.log('Apellido:', apellido);
-        console.log('Email:', email);
-        console.log('Password:', password);
-    };
+    const registerUser = async (data) => {
+        try {
+            setLoading(true)
+            const url = `${import.meta.env.VITE_URL_BACKEND}/registro`
+
+            const response = await fetchDataBackend(url, {
+                method: 'POST',
+                body: data
+            })
+            if (!response) {
+                toast.error(response?.msg || "Error al registrarse")
+            }
+        } catch (error) {
+            toast.error(error.response?.data?.msg)
+        } finally {
+            setLoading(false)
+        }
+    }
 
     return (
         <section className="h-screen bg-base flex flex-col md:flex-row">
+            <ToastContainer></ToastContainer>
             {/* Imagen lateral */}
             <div className="hidden md:flex w-1/2 bg-[#ba9dfe] relative items-center justify-center">
                 {/* Círculos decorativos */}
@@ -35,24 +50,25 @@ function Register() {
                 <div className="absolute -top-16 -left-10 w-24 h-24 bg-purple-100 rounded-full z-0"></div>
                 <div className="absolute bottom-0 right-0 w-32 h-32 bg-purple-200 rounded-full z-0"></div>
 
-            <ButtonRegresar></ButtonRegresar>
+                <ButtonRegresar></ButtonRegresar>
                 <div className="w-full max-w-md bg-card p-8 rounded-2xl shadow-lg relative z-10">
                     <h2 className="text-3xl font-bold text-center mb-6 text-sec">
                         Registrarse
                     </h2>
 
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                    <form onSubmit={handleSubmit(registerUser)} className="flex flex-col gap-4">
                         {/* Nombre */}
                         <label className="flex flex-col text-sec">
                             Nombre
                             <input
                                 type="text"
                                 placeholder="Tu nombre"
-                                value={nombre}
-                                onChange={(e) => setNombre(e.target.value)}
                                 className="mt-1 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-70"
-                                required
+                                {...register("nombre", { required: "El nombre es obligatorio" })}
                             />
+                            {errors.nombre && (
+                                <span className="text-sm text-error p-1 rounded mt-1">{errors.email.message}</span>
+                            )}
                         </label>
 
                         {/* Apellido */}
@@ -61,11 +77,14 @@ function Register() {
                             <input
                                 type="text"
                                 placeholder="Tu apellido"
-                                value={apellido}
-                                onChange={(e) => setApellido(e.target.value)}
                                 className="mt-1 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-70"
-                                required
+                                {...register("apellido", { required: "El apellido es obligatorio" })}
+
+
                             />
+                            {errors.apellido && (
+                                <span className="text-sm text-error p-1 rounded mt-1">{errors.email.message}</span>
+                            )}
                         </label>
 
                         {/* Correo */}
@@ -74,11 +93,13 @@ function Register() {
                             <input
                                 type="email"
                                 placeholder="correo@ejemplo.com"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
                                 className="mt-1 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-70"
-                                required
+                                {...register("email", { required: "El correo es obligatorio" })}
+
                             />
+                            {errors.email && (
+                                <span className="text-sm text-error p-1 rounded mt-1">{errors.email.message}</span>
+                            )}
                         </label>
 
                         {/* Contraseña */}
@@ -88,10 +109,9 @@ function Register() {
                                 <input
                                     type={showPassword ? 'text' : 'password'}
                                     placeholder="********"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
                                     className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-70 pr-10"
-                                    required
+                                    {...register("password", { required: "La contraseña es obligatorio" })}
+
                                 />
                                 <span
                                     onClick={() => setShowPassword(!showPassword)}
@@ -100,6 +120,9 @@ function Register() {
                                     {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                                 </span>
                             </div>
+                            {errors.password && (
+                                <span className="text-sm text-error p-1 rounded mt-1">{errors.email.message}</span>
+                            )}
                         </label>
 
                         {/* Botón */}
@@ -108,7 +131,7 @@ function Register() {
                             className="mt-4 cursor-pointer bg-secondary text-terc py-3 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 hover:scale-105 transition transform shadow-md w-full"
                         >
                             <UserPlus size={20} />
-                            Registrarse
+                            {loading ? "Cargando..." : "Registrarse"}
                         </button>
                     </form>
                     <div className="text-center mt-4 text-sm text-sec">
