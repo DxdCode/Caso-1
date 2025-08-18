@@ -12,7 +12,7 @@ function Layout() {
             <SideBar open={open} setOpen={setOpen} />
 
             {/* Contenedor*/}
-            <main className={`flex-1 p-6 transition-all duration-300 ${open ? 'ml-64' : 'ml-16'}`}>
+            <main className={`flex-1 p-6 transition-all duration-300 ${open ? 'ml-64' : 'ml-16'} overflow-hidden`}>
                 <Outlet />
             </main>
         </div>
