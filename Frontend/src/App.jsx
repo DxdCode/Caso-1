@@ -7,6 +7,8 @@ import PublicRoute from "./routes/PublicRoute"
 import ProtectedRoute from "./routes/ProtectedRoute"
 import VisualizarEstudiante from "./components/estudiantes/VisualizarEstudiante"
 import Dashboard from './Dashboard/Dashboard'
+import CrearEstudiante from "./components/estudiantes/CrearEstudiante"
+import EditarEstudiante from "./components/estudiantes/GestionarEstudiante"
 function App() {
   return (
     <BrowserRouter>
@@ -24,12 +26,11 @@ function App() {
             <Route path="/dashboard" element={<Layout />}>
               <Route index element={<Dashboard />} />
               <Route path="estudiantes" element={<VisualizarEstudiante />} />
+              <Route path="estudiantes/crear" element={<CrearEstudiante />} />
+              <Route path="estudiantes/gestionar" element={<EditarEstudiante />} />
             </Route>
           </Route>
 
-          {/* <Route path="estudiante/crear" element={<CrearEstudiante />} />
-          <Route path="estudiante/:id/editar" element={<EditarEstudiante />} />
-          <Route path="estudiante/:id/eliminar" element={<EditarEstudiante />} /> */}
           {/* CRUD DE MATERIAS */}
           {/* <Route path="materia" element={<VisualizarEstudiante />} />
           <Route path="materia/crear" element={<CrearEstudiante />} />

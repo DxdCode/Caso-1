@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { User, LogOut, Plus, FileText, Edit, Trash, Home } from "lucide-react";
+import { User, LogOut, Plus, FileText, Edit, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 import storeAuth from "../context/storeAuth";
 
@@ -24,8 +24,7 @@ function Sidebar({ open, setOpen }) {
             actions: [
                 { name: "Crear", path: "/dashboard/estudiantes/crear", icon: <Plus size={16} /> },
                 { name: "Visualizar", path: "/dashboard/estudiantes", icon: <FileText size={16} /> },
-                { name: "Editar", path: "/dashboard/estudiantes/:id/editar", icon: <Edit size={16} /> },
-                { name: "Eliminar", path: "/dashboard/estudiantes/:id/eliminar", icon: <Trash size={16} /> },
+                { name: "Gestionar", path: "/dashboard/estudiantes/gestionar", icon: <Edit size={16} /> },
             ]
         },
         {
@@ -33,8 +32,7 @@ function Sidebar({ open, setOpen }) {
             actions: [
                 { name: "Crear", path: "/dashboard/materias/crear", icon: <Plus size={16} /> },
                 { name: "Visualizar", path: "/dashboard/materias", icon: <FileText size={16} /> },
-                { name: "Editar", path: "/dashboard/materias/:id/editar", icon: <Edit size={16} /> },
-                { name: "Eliminar", path: "/dashboard/materias/:id/eliminar", icon: <Trash size={16} /> },
+                { name: "Gestionar", path: "/dashboard/materias/:id/gestionar", icon: <Edit size={16} /> },
             ]
         },
         {
@@ -42,8 +40,7 @@ function Sidebar({ open, setOpen }) {
             actions: [
                 { name: "Crear", path: "/dashboard/matriculas/crear", icon: <Plus size={16} /> },
                 { name: "Visualizar", path: "/dashboard/matriculas", icon: <FileText size={16} /> },
-                { name: "Editar", path: "/dashboard/matriculas/:id/editar", icon: <Edit size={16} /> },
-                { name: "Eliminar", path: "/dashboard/matriculas/:id/eliminar", icon: <Trash size={16} /> },
+                { name: "Gestionar", path: "/dashboard/matriculas/:id/gestionar", icon: <Edit size={16} /> },
             ]
         }
     ];
