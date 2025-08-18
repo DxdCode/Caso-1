@@ -14,7 +14,7 @@ function Card() {
           key={card.id}
           className={`flex flex-col gap-4 rounded-2xl shadow-lg w-3/4 md:w-full md:max-w-md overflow-hidden ${card.color} hover:scale-105 transition-transform duration-300 cursor-pointer`}
         >
-          <h2 className='bg-primary text-white text-center py-3 font-bold'>
+          <h2 className='bg-secondary text-white text-center py-3 font-bold'>
             CRUD de {card.dato}
           </h2>
 

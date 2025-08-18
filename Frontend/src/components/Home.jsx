@@ -8,8 +8,8 @@ function Home() {
 
       {/* Contenedor de círculos */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="hidden sm:block absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-48 h-48 bg-blue-300 rounded-full sm:w-92 sm:h-92"></div>
-        <div className="hidden sm:block absolute top-0 right-0 translate-x-1/4 -translate-y-1/4 w-48 h-48 bg-purple-300 rounded-full sm:w-72 sm:h-72"></div>
+        <div className="hidden sm:block absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 w-48 h-48 bg-purple-200 rounded-full sm:w-92 sm:h-92"></div>
+        <div className="hidden sm:block absolute top-0 right-0 translate-x-1/4 -translate-y-1/4 w-48 h-48 bg-sky-300 rounded-full sm:w-72 sm:h-72"></div>
         <div className="absolute bottom-0 left-0 -translate-x-1/4 translate-y-1/4 w-48 h-48 bg-blue-200 rounded-full sm:w-80 sm:h-80"></div>
         <div className="absolute bottom-0 right-0 translate-x-1/4 translate-y-1/4 w-48 h-48 bg-purple-300 rounded-full sm:w-80 sm:h-80"></div>
       </div>
