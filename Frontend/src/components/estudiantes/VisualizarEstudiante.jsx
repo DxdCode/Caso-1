@@ -47,7 +47,7 @@ function VisualizarEstudiante() {
     });
 
     return (
-        <section className="px-2">
+        <section className="px-2 overflow-hidden">
             <h2 className="text-2xl font-bold mb-6 text-sec">📋 Visualizar Estudiantes</h2>
 
             {/*  Barra de búsqueda  */}
