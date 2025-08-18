@@ -1,6 +1,6 @@
 import { User } from 'lucide-react';
 import storeAuth from '../context/storeAuth';
-import Nav from './Nav';
+import Nav from './SideBar';
 
 function Dashboard() {
   const nombre = storeAuth(state => state.nombre);
