@@ -32,7 +32,7 @@ function Sidebar({ open, setOpen }) {
             actions: [
                 { name: "Crear", path: "/dashboard/materias/crear", icon: <Plus size={16} /> },
                 { name: "Visualizar", path: "/dashboard/materias", icon: <FileText size={16} /> },
-                { name: "Gestionar", path: "/dashboard/materias/:id/gestionar", icon: <Edit size={16} /> },
+                { name: "Gestionar", path: "/dashboard/materias/gestionar", icon: <Edit size={16} /> },
             ]
         },
         {
@@ -40,7 +40,7 @@ function Sidebar({ open, setOpen }) {
             actions: [
                 { name: "Crear", path: "/dashboard/matriculas/crear", icon: <Plus size={16} /> },
                 { name: "Visualizar", path: "/dashboard/matriculas", icon: <FileText size={16} /> },
-                { name: "Gestionar", path: "/dashboard/matriculas/:id/gestionar", icon: <Edit size={16} /> },
+                { name: "Gestionar", path: "/dashboard/matriculas/gestionar", icon: <Edit size={16} /> },
             ]
         }
     ];

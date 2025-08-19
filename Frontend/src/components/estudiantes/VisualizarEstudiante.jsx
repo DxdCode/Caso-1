@@ -1,23 +1,21 @@
 import { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import useEstudiantes from "../../hooks/useEstudiante";
-import FiltroBusqueda from "./FiltrarBusqueda";
+import FiltroBusqueda from "../FiltrarBusqueda";
 import TablaEstudiantes from "./TablaEstudiante";
 
 function VisualizarEstudiante() {
-  {/* Obtener estudiantes del hook */}
+  {/* Obtener estudiantes del hook */ }
   const { estudiantes, loading } = useEstudiantes();
 
-  {/* Estado para el texto de búsqueda */}
+  {/* Estado para el texto de búsqueda */ }
   const [busqueda, setBusqueda] = useState("");
 
-  {/* Estado para el campo por el que se va a filtrar */}
+  {/* Estado como se va filtras y campos  */ }
   const [campoFiltro, setCampoFiltro] = useState("");
-
-  {/* Estado para los campos  de los estudiantes */}
   const [camposEstudiante, setCamposEstudiante] = useState([]);
 
-  {/* Generamos los campos */}
+  {/* Generamos los campos */ }
   useEffect(() => {
     if (estudiantes.length > 0) {
       const campos = Object.keys(estudiantes[0])
@@ -25,26 +23,26 @@ function VisualizarEstudiante() {
         .map((key) => ({
           value: key,
           label: key
-            .replace(/_/g, " ") 
-            .replace(/\b\w/g, (l) => l.toUpperCase()), 
+            .replace(/_/g, " ")
+            .replace(/\b\w/g, (l) => l.toUpperCase()),
         }));
       setCamposEstudiante(campos);
-      setCampoFiltro(campos[0]?.value || ""); 
+      setCampoFiltro(campos[0]?.value || "");
     }
   }, [estudiantes]);
 
-  {/* Función para normalizar texto y quitar acentos */}
+  {/* Función para normalizar texto y quitar acentos */ }
   const normalizar = (texto = "") =>
     texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
-  {/* Filtrar estudiantes segun búsqueda y campo seleccionado */}
+  {/* Filtrar estudiantes segun búsqueda y campo seleccionado */ }
   const estudiantesFiltrados = loading
-    ? [] 
+    ? []
     : estudiantes.filter((est) =>
-        campoFiltro
-          ? normalizar(est[campoFiltro] || "").includes(normalizar(busqueda))
-          : true
-      );
+      campoFiltro
+        ? normalizar(est[campoFiltro] || "").includes(normalizar(busqueda))
+        : true
+    );
 
   return (
     <section className="px-2">

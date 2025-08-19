@@ -5,10 +5,21 @@ import Register from "./components/auth/Register"
 import Layout from "./components/Layout"
 import PublicRoute from "./routes/PublicRoute"
 import ProtectedRoute from "./routes/ProtectedRoute"
-import VisualizarEstudiante from "./components/estudiantes/VisualizarEstudiante"
 import Dashboard from './Dashboard/Dashboard'
+
+import VisualizarEstudiante from "./components/estudiantes/VisualizarEstudiante"
 import CrearEstudiante from "./components/estudiantes/CrearEstudiante"
-import EditarEstudiante from "./components/estudiantes/GestionarEstudiante"
+import GestionarEstudiante from "./components/estudiantes/GestionarEstudiante"
+
+import VisualizarMateria from "./components/materias/visualizarMateria"
+import GestionMateria from "./components/materias/gestionMateria"
+
+import CrearMatricula from "./components/matriculas/crearMatricula"
+import VisualizarMatricula from "./components/matriculas/VisualizarMatricula"
+import GestionarMatricula from "./components/matriculas/GestionarMatricula"
+import CrearMateria from "./components/materias/CrearMateria"
+
+
 function App() {
   return (
     <BrowserRouter>
@@ -22,26 +33,23 @@ function App() {
 
         {/* RUTAS PRIVADAS */}
         <Route element={<ProtectedRoute />}>
-          <Route>
-            <Route path="/dashboard" element={<Layout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="estudiantes" element={<VisualizarEstudiante />} />
-              <Route path="estudiantes/crear" element={<CrearEstudiante />} />
-              <Route path="estudiantes/gestionar" element={<EditarEstudiante />} />
-            </Route>
+          <Route path="/dashboard" element={<Layout />}>
+            <Route index element={<Dashboard />} />
+            {/* CRUD DE ESTUDIANTES */}
+            <Route path="estudiantes" element={<VisualizarEstudiante />} />
+            <Route path="estudiantes/crear" element={<CrearEstudiante />} />
+            <Route path="estudiantes/gestionar" element={<GestionarEstudiante />} />
+            {/* CRUD DE MATERIA */}
+            <Route path="materias" element={<VisualizarMateria/>} />
+            <Route path="materias/crear" element={<CrearMateria/>} />
+            <Route path="materias/gestionar" element={<GestionMateria />} />
+            {/* CRUD DE MATRICULA */}
+            <Route path="matriculas" element={<VisualizarMatricula />} />
+            <Route path="matriculas/crear" element={<CrearMatricula />} />
+            <Route path="matriculas/gestionar" element={<GestionarMatricula />} />
           </Route>
 
-          {/* CRUD DE MATERIAS */}
-          {/* <Route path="materia" element={<VisualizarEstudiante />} />
-          <Route path="materia/crear" element={<CrearEstudiante />} />
-          <Route path="materia/:id/editar" element={<EditarEstudiante />} />
-          <Route path="materia/:id/eliminar" element={<EditarEstudiante />} /> */}
-          {/* CRUD DE MATRICULAS */}
-          {/* <Route path="matricula" element={<VisualizarEstudiante />} />
-          <Route path="matricula/crear" element={<CrearEstudiante />} />
-          <Route path="matricula/:id/editar" element={<EditarEstudiante />} />
-          <Route path="matricula/:id/eliminar" element={<EditarEstudiante />} /> */}
-
+ñ
         </Route>
       </Routes>
     </BrowserRouter>
