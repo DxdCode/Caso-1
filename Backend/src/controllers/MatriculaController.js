@@ -14,6 +14,10 @@ const crearMatricula = async (req, res) => {
     if (!Array.isArray(materia) || materia.length === 0)
         return res.status(400).json({ msg: "Debe enviar al menos una materia" });
 
+    //Si ya existe el codigo
+    const existeCodigo = await Matriculas.findOne({ codigo });
+    if (existeCodigo) return res.status(400).json({ msg: "El código de la matrícula ya existe" });
+
     // Validar estudiante
     const estudianteBDD = await Estudiantes.findById(estudiante);
     if (!estudianteBDD) return res.status(404).json({ msg: "Estudiante no encontrado" });

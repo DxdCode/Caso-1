@@ -58,27 +58,13 @@ function VisualizarMateria() {
       <h2 className='text-3xl font-bold mb-6 text-sec'>Visualizar Materias</h2>
 
       {/* Componente de filtrado */}
-      {camposMateria.length > 0 && (
-        <FiltroBusqueda
-          busqueda={busqueda}
-          setBusqueda={setBusqueda}
-          campoFiltro={campoFiltro}
-          setCampoFiltro={setCampoFiltro}
-          campos={camposMateria}
-        />
-      )}
-
-      {/* Cabecera de tabla visible */}
-
-      {camposMateria.length > 0 && (
-        <div className="hidden sm:grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] px-6 py-3 text-sec font-semibold text-sm">
-          {camposMateria.map((campo) => (
-            <div key={campo.value} className='truncate'>
-              {campo.label}
-            </div>
-          ))}
-        </div>
-      )}
+      <FiltroBusqueda
+        busqueda={busqueda}
+        setBusqueda={setBusqueda}
+        campoFiltro={campoFiltro}
+        setCampoFiltro={setCampoFiltro}
+        campos={camposMateria}
+      />
 
       {/* Tabla de estudiantes con skeleton loader */}
       <TablaMateria

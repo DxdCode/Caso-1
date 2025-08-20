@@ -5,14 +5,14 @@ export default function TablaMateria({
   materias = [],
   campos = [],
   loading = false,
-  handleEdit = () => {},
-  handleDelete = () => {},
+  handleEdit = () => { },
+  handleDelete = () => { },
 }) {
   const location = useLocation();
   const mostrarBotones = location.pathname === "/dashboard/materias/gestionar";
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+    <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(210px,1fr))]">
       {/* Skeleton Loader */}
       {loading ? (
         [...Array(6)].map((_, i) => (
@@ -52,7 +52,7 @@ export default function TablaMateria({
               </div>
             ))}
             {mostrarBotones && (
-              <div className="flex gap-2 mt-4 justify-end">
+              <div className="flex gap-2 justify-end">
                 <button
                   onClick={() => handleEdit(est)}
                   className="p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"

@@ -24,7 +24,7 @@ const MatriculaSchema = new Schema({
     materia: [{
         type: Schema.Types.ObjectId,
         ref: "Materia",
-        require: true
+        required: true
     }]
 }, {
     timestamps: true

@@ -44,7 +44,7 @@ export default function useMatricula() {
             if (callback) callback();
 
         } catch (error) {
-            toast.error(error?.response?.data?.msg);
+            toast.error(error?.response?.data?.msg );
         } finally {
             setLoading(false);
         }
