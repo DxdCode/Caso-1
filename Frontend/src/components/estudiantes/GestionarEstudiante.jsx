@@ -3,7 +3,7 @@ import { ToastContainer } from "react-toastify";
 import useEstudiantes from "../../hooks/useEstudiante";
 import FiltroBusqueda from "../FiltrarBusqueda";
 import TablaEstudiantes from "./TablaEstudiante";
-import ModalEditarEstudiante from "../../Dashboard/ModalGestionar";
+import ModalGestionar from "../../Dashboard/ModalGestionar";
 
 function GestionarEstudiante() {
   const { estudiantes, loading, eliminarEstudiante, actualizarEstudiante } = useEstudiantes();
@@ -39,16 +39,13 @@ function GestionarEstudiante() {
     actualizarEstudiante(editId, formData);
     setEditId(null);
   };
+  const campos = Object.keys(formData)
+    .filter((key) => key !== "_id")
+    .map((key) => ({
+      value: key,
+      label: key.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()),
+    }));
 
-  const campos = [
-    { value: "nombre", label: "Nombre" },
-    { value: "apellido", label: "Apellido" },
-    { value: "cedula", label: "Cédula" },
-    { value: "email", label: "Correo" },
-    { value: "telefono", label: "Teléfono" },
-    { value: "ciudad", label: "Ciudad" },
-    { value: "direccion", label: "Dirección" },
-  ];
 
   return (
     <section className="px-2">
@@ -71,13 +68,13 @@ function GestionarEstudiante() {
         handleDelete={eliminarEstudiante}
       />
 
-      <ModalEditarEstudiante
+      <ModalGestionar
+        title="Editar Estudiante"
         editId={editId}
         setEditId={setEditId}
         formData={formData}
-        setFormData={setFormData}
         handleChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })}
-        handleUpdate={handleUpdate}
+        handleSubmit={handleUpdate}
       />
     </section>
   );

@@ -45,7 +45,7 @@ export default function TablaMateria({
           >
             {campos.map((campo) => (
               <div key={campo.value} className="flex flex-col">
-                <span className="font-semibold text-gray-500 text-sm uppercase tracking-wide">
+                <span className="font-semibold text-gray-500 text-sm tracking-wide">
                   {campo.label}
                 </span>
                 <p className="text-gray-700 text-base truncate">{est[campo.value]}</p>
