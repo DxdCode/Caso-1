@@ -3,7 +3,7 @@ import { ToastContainer } from "react-toastify";
 import useEstudiantes from "../../hooks/useEstudiante";
 import FiltroBusqueda from "../FiltrarBusqueda";
 import TablaEstudiantes from "./TablaEstudiante";
-import ModalEditarEstudiante from "./ModalEditarEstudiante";
+import ModalEditarEstudiante from "../../Dashboard/ModalGestionar";
 
 function GestionarEstudiante() {
   const { estudiantes, loading, eliminarEstudiante, actualizarEstudiante } = useEstudiantes();

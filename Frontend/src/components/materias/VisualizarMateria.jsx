@@ -10,7 +10,6 @@ function VisualizarMateria() {
   const [campoFiltro, setCampoFiltro] = useState("")
   const [camposMateria, setCamposMateria] = useState([])
 
-  /* Generamos los campos */
   useEffect(() => {
     if (materia.length > 0) {
       const campos = Object.keys(materia[0])
@@ -26,7 +25,6 @@ function VisualizarMateria() {
     }
   }, [materia])
 
-  {/* Filtrar Materias segun búsqueda y campo seleccionado */ }
   const materiaFiltradas = loading
     ? []
     : materia.filter((est) => {
