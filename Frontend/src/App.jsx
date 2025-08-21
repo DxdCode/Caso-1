@@ -10,14 +10,15 @@ import Dashboard from './Dashboard/Dashboard'
 import VisualizarEstudiante from "./components/estudiantes/VisualizarEstudiante"
 import CrearEstudiante from "./components/estudiantes/CrearEstudiante"
 import GestionarEstudiante from "./components/estudiantes/GestionarEstudiante"
-
-import GestionMateria from "./components/materias/gestionMateria"
-
-import CrearMatricula from "./components/matriculas/crearMatricula"
-import VisualizarMatricula from "./components/matriculas/VisualizarMatricula"
-import GestionarMatricula from "./components/matriculas/GestionarMatricula"
 import CrearMateria from "./components/materias/CrearMateria"
-import VisualizarMateria from "./components/materias/visualizarMateria"
+import VisualizarMateria from "./components/materias/VisualizarMateria"
+import GestionMateria from "./components/materias/gestionMateria"
+import VisualizarMatricula from "./components/matriculas/VisualizarMatricula"
+import CrearMatricula from "./components/matriculas/CrearMatricula"
+import GestionarMatricula from "./components/matriculas/GestionarMatricula"
+
+
+
 
 
 function App() {
