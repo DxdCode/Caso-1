@@ -48,8 +48,6 @@ function App() {
             <Route path="matriculas/crear" element={<CrearMatricula />} />
             <Route path="matriculas/gestionar" element={<GestionarMatricula />} />
           </Route>
-
-ñ
         </Route>
       </Routes>
     </BrowserRouter>
