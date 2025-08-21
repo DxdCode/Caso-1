@@ -5,7 +5,7 @@ import FiltroBusqueda from '../FiltrarBusqueda'
 import TablaMateria from './TablaMateria'
 import ModalGestionar from '../../Dashboard/ModalGestionar'
 
-function GestionMateria() {
+function GestionarMateria() {
   const { materia, loading, actualizarMateria, eliminarMateria } = useMateria()
   const [busqueda, setBusqueda] = useState()
   const [campoFiltro, setCampoFiltro] = useState("Codigo")
@@ -76,4 +76,4 @@ const MateriasFiltradas = materia.filter((mater) =>
   )
 }
 
-export default GestionMateria
+export default GestionarMateria

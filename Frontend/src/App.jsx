@@ -12,10 +12,10 @@ import CrearEstudiante from "./components/estudiantes/CrearEstudiante"
 import GestionarEstudiante from "./components/estudiantes/GestionarEstudiante"
 import CrearMateria from "./components/materias/CrearMateria"
 import VisualizarMateria from "./components/materias/VisualizarMateria"
-import GestionMateria from "./components/materias/gestionMateria"
 import VisualizarMatricula from "./components/matriculas/VisualizarMatricula"
 import CrearMatricula from "./components/matriculas/CrearMatricula"
 import GestionarMatricula from "./components/matriculas/GestionarMatricula"
+import GestionarMateria from "./components/materias/GestionarMateria"
 
 
 
@@ -43,7 +43,7 @@ function App() {
             {/* CRUD DE MATERIA */}
             <Route path="materias" element={<VisualizarMateria/>} />
             <Route path="materias/crear" element={<CrearMateria/>} />
-            <Route path="materias/gestionar" element={<GestionMateria />} />
+            <Route path="materias/gestionar" element={<GestionarMateria />} />
             {/* CRUD DE MATRICULA */}
             <Route path="matriculas" element={<VisualizarMatricula />} />
             <Route path="matriculas/crear" element={<CrearMatricula />} />
