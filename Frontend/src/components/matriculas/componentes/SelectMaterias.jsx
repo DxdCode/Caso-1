@@ -44,8 +44,7 @@ function TablaMatricula({ matriculas = [], loading = false, handleEdit, handleDe
             {campos.map((campo) => (
               <div key={campo.value} className="text-main">
                 <span className="sm:hidden block text-xs text-gray-400">{campo.label}: </span>
-
-                <div className="truncate overflow-hidden whitespace-nowrap text-left sm:text-center">
+                <div className="truncate overflow-hidden whitespace-nowrap text-right">
                   {campo.value === "materia" ? (
                     <>
                       <span className="truncate">
@@ -70,7 +69,7 @@ function TablaMatricula({ matriculas = [], loading = false, handleEdit, handleDe
             ))}
 
             {mostrarBotones && (
-              <div className="flex gap-2">
+              <div className="flex gap-2 justify-end">
                 <button
                   onClick={() => handleEdit(matricula)}
                   className="p-1 bg-blue-500 text-white rounded hover:bg-blue-600"

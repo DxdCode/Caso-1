@@ -3,11 +3,9 @@ import { useLocation } from "react-router-dom";
 
 export default function TablaEstudiantes({ estudiantes = [], campos = [], loading = false, handleEdit, handleDelete }) {
   
-  {/* Obtener ruta actual y determinar mediante una ruta especifica para los botones */}
   const location = useLocation();
   const mostrarBotones = location.pathname === "/dashboard/estudiantes/gestionar";
 
-  {/* Función para formatear */}
   const formatDate = (value) => {
     if (!value) return "";
     const date = new Date(value);
@@ -24,12 +22,10 @@ export default function TablaEstudiantes({ estudiantes = [], campos = [], loadin
             key={i}
             className="grid sm:grid-cols-[repeat(auto-fit,minmax(120px,1fr))] grid-cols-1 gap-2 bg-white rounded-xl shadow-md px-6 py-4 border border-gray-100 animate-pulse"
           >
-            {/* Crear celdas de loader para cada campo */}
             {campos.map((_, j) => (
               <div key={j} className="h-4 bg-gray-200 rounded w-full"></div>
             ))}
 
-            {/* Loader adicional para botones si corresponde */}
             {mostrarBotones && <div className="h-4 bg-gray-200 rounded w-full"></div>}
           </div>
         ))
@@ -46,25 +42,21 @@ export default function TablaEstudiantes({ estudiantes = [], campos = [], loadin
             {/* Renderizar cada campo del estudiante */}
             {campos.map((campo) => (
               <div key={campo.value} className="text-main">
-                {/* Mostrar etiqueta solo en móvil */}
                 <span className="sm:hidden block text-xs text-gray-400">{campo.label}</span>
 
-                {/* Mostrar valor del campo, formateando fecha si aplica */}
                 <p className="text-gray-700 truncate">
                   {campo.value.includes("fecha") ? formatDate(est[campo.value]) : est[campo.value]}
                 </p>
               </div>
             ))}
 
-            {/* Mostrar botones de editar y eliminar si corresponde */}
+            {/* Mostrar botones de editar y eliminar */}
             {mostrarBotones && (
               <div className="flex gap-2">
-                {/* Botón de editar */}
                 <button onClick={() => handleEdit(est)} className="p-1 bg-blue-500 text-white rounded hover:bg-blue-600">
                   <Edit size={16} />
                 </button>
 
-                {/* Botón de eliminar */}
                 <button onClick={() => handleDelete(est._id)} className="p-1 bg-red-500 text-white rounded hover:bg-red-600">
                   <Trash size={16} />
                 </button>
