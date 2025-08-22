@@ -23,6 +23,7 @@ function GestionarMatricula() {
       const mat = matricula.find((m) => m._id === editId);
       if (mat) {
         setFormData({
+          codigo: mat.codigo || "",
           descripcion: mat.descripcion || "",
           materia: mat.materia.map((m) => m._id) || [],
         });
@@ -38,13 +39,13 @@ function GestionarMatricula() {
     setEditId(null);
   };
 
-const campos = [
-  { value: "codigo", label: "Código" },
-  { value: "descripcion", label: "Descripción" },
-  { value: "creditos", label: "Créditos" },
-  { value: "materia", label: "Materias" },
-  { value: "estudiante", label: "Estudiante", render: (est) => `${est?.nombre} ${est?.apellido}` },
-];
+  const campos = [
+    { value: "codigo", label: "Código" },
+    { value: "descripcion", label: "Descripción" },
+    { value: "creditos", label: "Créditos" },
+    { value: "materia", label: "Materias" },
+    { value: "estudiante", label: "Estudiante", render: (est) => `${est?.nombre} ${est?.apellido}` },
+  ];
 
 
   const matriculaFiltrada = loading ? [] : matricula.filter((mat) => {
@@ -105,7 +106,7 @@ const campos = [
         campos={campos}
       />
       <div className="hidden sm:grid sm:grid-cols-[100px_1fr_100px_0.8fr_300px] px-6 py-3 text-sec text-sm gap-4">
-        {campos.map((valor) =>(
+        {campos.map((valor) => (
           <div className="text-center">{valor.label}</div>
         ))}
       </div>
