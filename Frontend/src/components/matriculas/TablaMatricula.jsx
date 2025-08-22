@@ -49,14 +49,14 @@ function TablaMatricula({ matriculas = [], loading = false, handleEdit, handleDe
                   {campo.value === "materia" ? (
                     <>
                       <span className="truncate">
-                        {matricula.materia.slice(0, 2).map((m) => m.nombre).join(" ")}
+                        {matricula.materia.slice(0, 1).map((m) => m.nombre).join(" ")}
                       </span>
-                      {matricula.materia.length > 2 && (
+                      {matricula.materia.length > 1 && (
                         <button
                           onClick={() => abrirModal(matricula.materia)}
                           className="text-xs text-sec ml-1 cursor-pointer truncate"
                         >
-                          +{matricula.materia.length - 2} más
+                          +{matricula.materia.length - 1} más
                         </button>
                       )}
                     </>

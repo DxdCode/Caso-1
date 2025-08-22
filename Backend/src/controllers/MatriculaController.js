@@ -70,7 +70,7 @@ const visualizarMatricula = async (req, res) => {
 
 const editarMatricula = async (req, res) => {
     const { id } = req.params;
-    const { descripcion, materia } = req.body;
+    const { descripcion, materia, codigo } = req.body;
 
     if (!mongoose.Types.ObjectId.isValid(id))
         return res.status(400).json({ msg: "ID inválido de matrícula" });
@@ -79,6 +79,9 @@ const editarMatricula = async (req, res) => {
     if (!matricula) return res.status(404).json({ msg: "Matrícula no encontrada" });
 
     if (!Array.isArray(materia)) return res.status(400).json({ msg: "Las materias deben enviarse en un array" });
+
+    const existeCodigo = await Matriculas.findOne({ codigo, _id: { $ne: id } });
+    if (existeCodigo) return res.status(400).json({ msg: `El código ${codigo} ya está en uso` });
 
     let totalCreditos = 0;
     const materiasValidas = [];
@@ -97,11 +100,13 @@ const editarMatricula = async (req, res) => {
 
     matricula.materia = materiasValidas;
     matricula.descripcion = descripcion ?? matricula.descripcion;
+    matricula.codigo = codigo ?? matricula.codigo;
     matricula.creditos = totalCreditos;
 
     await matricula.save();
     res.status(200).json({ msg: "Matrícula actualizada correctamente", matricula });
 };
+
 
 const eliminarMatricula = async (req, res) => {
     const { id } = req.params;

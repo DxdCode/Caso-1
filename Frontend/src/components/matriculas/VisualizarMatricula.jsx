@@ -20,14 +20,14 @@ function VisualizarMatricula() {
         {
           value: "estudiante",
           label: "Estudiante",
-          render: (est) => `${est.nombre} ${est.apellido} (${est.cedula})`
+          render: (est) => `${est.nombre} ${est.apellido} - CI: ${est.cedula}`
         },
         {
           value: "materia",
           label: "Materias",
           render: (materias) =>
-            materias.slice(0, 2).map((m) => m.nombre).join(" ") +
-            (materias.length > 2 ? ` +${materias.length - 2} más` : "")
+            materias.slice(0, 1).map((m) => m.nombre).join(" ") +
+            (materias.length > 1 ? ` +${materias.length - 2} más` : "")
         }
       ]
       setCamposMatricula(campos)
