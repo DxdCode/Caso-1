@@ -1,6 +1,15 @@
 # 🎓 Gestor de Matrículas
 
-🌐 La aplicación está desplegada en: [https://gestormatriculas.netlify.app/](https://gestormatriculas.netlify.app/)
+## 🚀 Despliegue
+
+- **Frontend:** Desplegado en **Netlify**  
+  🌐 [https://gestormatriculas.netlify.app/](https://gestormatriculas.netlify.app/)  
+
+- **Backend:** Desplegado en **Render** (espera unos momentos hasta que el servidor esté activo)
+  
+  🔗 [https://render.com](https://render.com)  
+
+      💡 Recuerda configurar las variables de entorno tanto Frontend como Backend
 
 <img width="1108" height="732" alt="image" src="https://github.com/user-attachments/assets/d466dbef-90e1-43b8-8d12-50dcd6b3aea4" />
 
@@ -46,6 +55,7 @@
 
 
 ## ⚡ Instalación y Configuración
+
 
 El proyecto está dividido en dos carpetas: **Backend** y **Frontend**. Sigue estos pasos para configurar y ejecutar la aplicación localmente:
 
