@@ -30,13 +30,12 @@ export default function useEstudiantes() {
   const crearEstudiante = async (data, callback) => {
     setLoading(true);
     try {
-      const response = await fetchDataBackend(`${import.meta.env.VITE_URL_BACKEND}/estudiante`, {
+      await fetchDataBackend(`${import.meta.env.VITE_URL_BACKEND}/estudiante`, {
         method: "POST",
         body: data,
         config: { headers },
       });
 
-      toast.success(response?.data?.msg || response?.msg);
       cargarEstudiantes();
 
       if (callback) callback();

@@ -10,7 +10,7 @@ const MateriaSchema = new Schema({
         type: Number,
         required: true,
         trim: true,
-        unique:true
+        unique: true
     },
     descripcion: {
         type: String,
@@ -21,6 +21,11 @@ const MateriaSchema = new Schema({
         type: Number,
         required: true,
         trim: true
+    },
+    usuario: {  
+        type: Schema.Types.ObjectId,
+        ref: "Usuario",
+        required: true
     }
 }, {
     timestamps: true

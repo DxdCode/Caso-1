@@ -1,13 +1,13 @@
 import {Router} from 'express'
 import { verificarTokenJWT } from '../middlewares/JWT.js'
-import { actualizarEtudiante, crearEtudiante, eliminarEtudiante, visualizarEtudiante } from '../controllers/EstudianteController.js'
+import { actualizarEstudiante, crearEstudiante,  eliminarEstudiante, visualizarEstudiante } from '../controllers/EstudianteController.js'
 
 const router = Router()
 
-router.post("/estudiante",verificarTokenJWT,crearEtudiante)
-router.get("/estudiante",verificarTokenJWT,visualizarEtudiante)
-router.put("/estudiante/:id",verificarTokenJWT,actualizarEtudiante)
-router.delete("/estudiante/:id",verificarTokenJWT,eliminarEtudiante)
+router.post("/estudiante",verificarTokenJWT,crearEstudiante)
+router.get("/estudiante",verificarTokenJWT,visualizarEstudiante)
+router.put("/estudiante/:id",verificarTokenJWT,actualizarEstudiante)
+router.delete("/estudiante/:id",verificarTokenJWT,eliminarEstudiante)
 
 
 

@@ -1,11 +1,10 @@
-import React from "react";
-import { ToastContainer } from "react-toastify";
 import { Plus } from "lucide-react";
+import { ToastContainer } from "react-toastify";
 
 function FormGenerico({ titulo, fields, onSubmit, loading }) {
   return (
     <section className="px-2">
-      <ToastContainer />
+      <ToastContainer/>
       <h2 className="text-3xl font-bold mb-2 text-sec">{titulo}</h2>
 
       <form onSubmit={onSubmit} className="flex flex-col gap-6">

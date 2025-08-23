@@ -16,7 +16,6 @@ const EstudianteSchema = new Schema(
             type: String,
             required: true,
             trim: true,
-            unique:true
         },
         fecha_nacimiento: {
             type: Date,
@@ -42,11 +41,16 @@ const EstudianteSchema = new Schema(
             type: String,
             required: true,
             trim: true,
-            unique:true
-
         },
-    },{
+        usuario: {  
+            type: Schema.Types.ObjectId,
+            ref: "Usuario",
+            required: true
+        }
+    },
+    {
         timestamps: true,
     }
 )
+
 export default model("Estudiante", EstudianteSchema)

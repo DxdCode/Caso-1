@@ -25,7 +25,12 @@ const MatriculaSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Materia",
         required: true
-    }]
+    }],
+    usuario: { 
+        type: Schema.Types.ObjectId,
+        ref: "Usuario",
+        required: true
+    }
 }, {
     timestamps: true
 })

@@ -33,12 +33,11 @@ export default function useMatricula() {
         setLoading(true)
         try {
             const url = `${import.meta.env.VITE_URL_BACKEND}/matricula`
-            const response = await fetchDataBackend(url, {
+            await fetchDataBackend(url, {
                 method: "POST",
                 body: data,
                 config: { headers }
             })
-            toast.success(response?.data?.msg || response?.msg);
             cargarMatricula()
 
             if (callback) callback();

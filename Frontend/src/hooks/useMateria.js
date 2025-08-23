@@ -22,6 +22,8 @@ export default function useMateria() {
                 config: { headers }
             })
             setMateria(response)
+            console.log(response)
+
         } catch (error) {
             toast.error(error.response?.data?.msg || error.response?.data)
         } finally {
@@ -33,12 +35,11 @@ export default function useMateria() {
         setLoading(true)
         try {
             const url = `${import.meta.env.VITE_URL_BACKEND}/materia`
-            const response = await fetchDataBackend(url, {
+            await fetchDataBackend(url, {
                 method: "POST",
                 body: data,
                 config: { headers }
             })
-            toast.success(response?.data?.msg || response?.msg);
             cargarMaterias()
 
             if (callback) callback();

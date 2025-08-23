@@ -1,5 +1,5 @@
 import { LogIn, UserPlus } from 'lucide-react'
-import Card from './Card'
+import CardHome from './CardHome'
 import { Link } from 'react-router-dom'
 
 function Home() {
@@ -30,7 +30,7 @@ function Home() {
 
         {/* Cards */}
         <div className="w-full py-10 flex justify-center">
-          <Card />
+          <CardHome/>
         </div>
 
         {/* Botones con iconos */}
