@@ -1,12 +1,88 @@
-# React + Vite
+# 🎓 Gestor de Matrículas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 La aplicación está desplegada en: [https://gestormatriculas.netlify.app/](https://gestormatriculas.netlify.app/)
 
-Currently, two official plugins are available:
+<img width="1108" height="732" alt="image" src="https://github.com/user-attachments/assets/d466dbef-90e1-43b8-8d12-50dcd6b3aea4" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+
+## 🛠 Tecnologías Utilizadas
+
+- **Frontend:** React, Tailwind CSS  
+- **Backend:** Node.js, Express  
+- **Base de Datos:** MongoDB  
+- **Otras Herramientas:** Mongoose (modelado de datos), JWT (autenticación)
+
+
+
+## ✨ Características
+
+- **👨‍🎓 Gestión de Estudiantes:**  
+  Crear, visualizar, actualizar y eliminar estudiantes con información como nombre, cédula, correo, teléfono, etc.
+
+- **📚 Gestión de Materias:**  
+  Crear, visualizar, actualizar y eliminar materias con código único, créditos y descripción.
+
+- **📝 Gestión de Matrículas:**  
+  Asociar estudiantes a materias, calcular créditos totales y gestionar matrículas por usuario.
+
+- **🔒 Autenticación:**   
+  Cada usuario solo puede gestionar sus propios registros (estudiantes, materias, matrículas).
+
+- **✅ Validaciones:**
+  Cédulas, correos y teléfonos pueden repetirse entre diferentes usuarios, pero **no pueden repetirse dentro del mismoo usuario**.   
+
+
+
+## 💻 Requisitos Previos
+
+- Node.js 
+- MongoDB (instalado localmente o conexión a MongoDB Atlas)  
+- npm 
+- Un navegadorde tu preferencia
+
+
+
+## ⚡ Instalación y Configuración
+
+El proyecto está dividido en dos carpetas: **Backend** y **Frontend**. Sigue estos pasos para configurar y ejecutar la aplicación localmente:
+
+### 1️⃣ Clonar el Repositorio
+
+    git clone <URL_DEL_REPOSITORIO>
+    cd GestionMatriculas-master
+
+
+### 2️⃣ Configurar el Backend
+
+    cd Backend
+    npm install
+
+Crea un archivo .env en la carpeta Backend con las siguientes variables:
+
+    MONGO_URI_LOCAL=<tu_conexion_mongodb>
+    JWT_SECRET=<tu_secreto_jwt>
+    PORT=3000
+
+Inicia el servidor backend:
+
+    npm start
+
+### 3️⃣ Configurar del Frontend
+
+    cd ../Frontend
+    npm install
+
+Crea un archivo .env en la carpeta Backend con las siguientes variables:
+
+    VITE_URL_BACKEND =http://localhost:3000
+
+Iniciar el frontend:
+
+    npm start
+
+
+### 📬 Contactame
+Si tienes dudas o sugerencias, contáctame en mi LinkedIn
