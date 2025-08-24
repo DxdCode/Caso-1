@@ -59,6 +59,14 @@ function GestionarEstudiante() {
         setCampoFiltro={setCampoFiltro}
         campos={campos}
       />
+      <div className="hidden sm:grid sm:grid-cols-[repeat(auto-fit,minmax(120px,1fr))] text-sec py-2 px-4 ">
+        {campos.map((campo) => (
+          <div key={campo.value} className="truncate">
+            {campo.label}
+          </div>
+        ))}
+        <div className="truncate">Acciones</div>
+      </div>
 
       <TablaEstudiantes
         estudiantes={estudiantesFiltrados}
