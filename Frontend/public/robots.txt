@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gestormatriculas.netlify.app/sitemap.xml
