@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import useMateria from '../../hooks/useMateria'
 import { ToastContainer } from 'react-toastify'
-import FiltroBusqueda from '../FiltrarBusqueda'
+import FiltroBusqueda from '../../Dashboard/FiltrarBusqueda'
 import TablaMateria from './TablaMateria'
 import ModalGestionar from '../../Dashboard/ModalGestionar'
 

@@ -4,7 +4,7 @@ import { ArrowLeft } from 'lucide-react';
 function ButtonRegresar() {
   const location = useLocation();
 
-  // Definir colores según la página
+  // Definir colores segun la pagina
   const styles = {
     '/register': 'bg-[#8B5CB1] text-white',
     '/login': 'bg-primary text-white',
@@ -16,7 +16,7 @@ function ButtonRegresar() {
     <Link
       to="/"
       className={`flex items-center gap-2 px-3 py-2 rounded-lg font-bold hover:opacity-90 transition z-20 ${buttonStyle}`}
-      style={{ marginBottom: '1rem' }} // separa del card
+      style={{ marginBottom: '1rem' }}
     >
       <ArrowLeft size={20} />
       Regresar

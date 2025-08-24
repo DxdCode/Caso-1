@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import useEstudiantes from "../../hooks/useEstudiante";
-import FiltroBusqueda from "../FiltrarBusqueda";
+import FiltroBusqueda from "../../Dashboard/FiltrarBusqueda";
 import TablaEstudiantes from "./TablaEstudiante";
 import ModalGestionar from "../../Dashboard/ModalGestionar";
 

@@ -19,7 +19,7 @@ function CrearMateria() {
   const onSubmit = handleSubmit((data) => {
     crearMateria(data, () => {
       reset();
-      setTimeout(() => navigate("/dashboard/materias"), 2000);
+      setTimeout(() => navigate("/dashboard/materias/gestionar"), 2000);
     });
   });
 

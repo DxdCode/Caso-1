@@ -22,7 +22,7 @@ function CrearEstudiante() {
   const onSubmit = handleSubmit((data) => {
     crearEstudiante(data, () => {
       reset();
-      setTimeout(() => navigate("/dashboard/estudiantes"), 2000);
+      setTimeout(() => navigate("/dashboard/estudiantes/gestionar"), 2000);
     });
   });
 

@@ -52,7 +52,7 @@ function CrearMatricula() {
     crearMatricula(submitData, () => {
       setSelectMateria([]);
       setSelectedEstudiante(null);
-      setTimeout(() => navigate("/dashboard/matriculas"), 2000);
+      setTimeout(() => navigate("/dashboard/matriculas/gestionar"), 2000);
     });
   };
 

@@ -1,7 +1,6 @@
 import { LogIn, UserPlus } from 'lucide-react'
-import CardHome from './CardHome'
 import { Link } from 'react-router-dom'
-
+import CardHome from './CardHome'
 function Home() {
   return (
     <section className='min-h-screen bg-base flex flex-col items-center px-4 sm:justify-center justify-start text-center relative'>

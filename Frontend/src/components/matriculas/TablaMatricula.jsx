@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { Edit, Trash, X } from "lucide-react";
-import { useLocation } from "react-router-dom";
 
 function TablaMatricula({ matriculas = [], loading = false, handleEdit, handleDelete, campos = [] }) {
-  const location = useLocation();
-  const mostrarBotones = location.pathname === "/dashboard/matriculas/gestionar";
-
   const [modalAbierto, setModalAbierto] = useState(false);
   const [materiasModal, setMateriasModal] = useState([]);
 
@@ -30,13 +26,13 @@ function TablaMatricula({ matriculas = [], loading = false, handleEdit, handleDe
             {campos.map((_, j) => (
               <div key={j} className="h-4 bg-gray-200 rounded w-full"></div>
             ))}
-            {mostrarBotones && <div className="h-4 bg-gray-200 rounded w-full"></div>}
+            <div className="h-4 bg-gray-200 rounded w-full"></div>
           </div>
         ))
       ) : matriculas.length === 0 ? (
         <p className="text-center text-gray-500 text-sm pt-4">No hay matrículas para mostrar.</p>
       ) : (
-        matriculas.map((matricula) => (
+        [...matriculas].reverse().map((matricula) => (
           <div
             key={matricula._id}
             className="grid sm:grid-cols-[100px_minmax(150px,1fr)_100px_0.8fr_300px] grid-cols-1 gap-4 bg-card rounded-xl shadow-md hover:shadow-lg hover:bg-gray-50 transition-all duration-200 px-6 py-4 border border-gray-100 text-sec text-sm overflow-hidden"
@@ -69,27 +65,24 @@ function TablaMatricula({ matriculas = [], loading = false, handleEdit, handleDe
               </div>
             ))}
 
-            {mostrarBotones && (
-              <div className="flex gap-2">
-                <button
-                  onClick={() => handleEdit(matricula)}
-                  className="p-1 bg-blue-500 text-white rounded hover:bg-blue-600"
-                >
-                  <Edit size={16} />
-                </button>
-                <button
-                  onClick={() => handleDelete(matricula._id)}
-                  className="p-1 bg-red-500 text-white rounded hover:bg-red-600"
-                >
-                  <Trash size={16} />
-                </button>
-              </div>
-            )}
+            <div className="flex gap-2">
+              <button
+                onClick={() => handleEdit(matricula)}
+                className="p-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+              >
+                <Edit size={16} />
+              </button>
+              <button
+                onClick={() => handleDelete(matricula._id)}
+                className="p-1 bg-red-500 text-white rounded hover:bg-red-600"
+              >
+                <Trash size={16} />
+              </button>
+            </div>
           </div>
         ))
       )}
 
-      {/* Modal de materias */}
       {modalAbierto && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-xl shadow-lg max-w-md w-full max-h-[80vh] overflow-y-auto p-6 relative">

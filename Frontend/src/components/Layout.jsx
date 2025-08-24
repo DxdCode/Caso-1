@@ -1,6 +1,6 @@
 // Layout.jsx
 import { Outlet } from 'react-router-dom';
-import SideBar from './SideBar';
+import SideBar from '../Dashboard/SideBar';
 import { useState } from 'react';
 
 function Layout() {

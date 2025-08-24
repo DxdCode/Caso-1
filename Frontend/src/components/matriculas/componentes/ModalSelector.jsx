@@ -6,8 +6,7 @@ function ModalSelector({ isOpen, onClose, title, items, renderItem }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-5">
       <div
-        className="relative w-full sm:w-[80%] lg:w-1/2 bg-card rounded-2xl shadow-lg 
-                   max-h-[90vh] overflow-y-auto p-6"
+        className="relative w-full sm:w-[80%] lg:w-1/2 bg-card rounded-2xl shadow-lg max-h-[90vh] overflow-y-auto p-6"
       >
         <button
           onClick={onClose}

@@ -48,7 +48,7 @@ function Login() {
     <section className="h-screen bg-base flex flex-col md:flex-row">
       <ToastContainer />
 
-      {/* Imagen lateral en desktop */}
+      {/* Imagen lateral */}
       <div className="hidden md:flex w-1/2 bg-[#CFEAFD] relative items-center justify-center overflow-hidden">
         <div className="absolute -top-20 -left-20 w-72 h-72 bg-blue-200 rounded-full"></div>
         <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-300 rounded-full"></div>
@@ -61,7 +61,6 @@ function Login() {
         <div className="absolute -top-16 -left-10 w-24 h-24 bg-blue-400 rounded-full z-0"></div>
         <div className="absolute bottom-0 right-0 w-32 h-32 bg-blue-200 rounded-full z-0"></div>
 
-        {/* Wrapper del botón + card */}
         <div className="flex flex-col items-center w-full max-w-md">
           <ButtonRegresar />
 
@@ -117,7 +116,6 @@ function Login() {
                 {loading ? "Cargando..." : "Iniciar Sesión"}
               </button>
 
-              {/* Link a registro */}
               <div className="text-center mt-4 text-sm text-sec">
                 ¿Aún no tienes una cuenta?{" "}
                 <Link

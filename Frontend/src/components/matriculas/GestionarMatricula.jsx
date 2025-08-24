@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import useMatricula from "../../hooks/useMatricula";
 import useMateria from "../../hooks/useMateria";
-import FiltroBusqueda from "../FiltrarBusqueda";
+import FiltroBusqueda from "../../Dashboard/FiltrarBusqueda"
 import TablaMatricula from "./TablaMatricula";
 import ModalGestionarMatricula from "./componentes/ModalGestionarMatricula";
 

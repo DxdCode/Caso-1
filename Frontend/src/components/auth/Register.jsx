@@ -41,7 +41,7 @@ function Register() {
         <section className="h-screen bg-base flex flex-col md:flex-row">
             <ToastContainer />
 
-            {/* Imagen lateral en desktop */}
+            {/* Imagen lateral */}
             <div className="hidden md:flex w-1/2 bg-[#ba9dfe] relative items-center justify-center">
                 <div className="absolute -top-20 -left-20 w-72 h-72 bg-purple-200 rounded-full"></div>
                 <div className="absolute bottom-0 right-0 w-80 h-80 bg-purple-300 rounded-full"></div>
@@ -54,9 +54,7 @@ function Register() {
                 <div className="absolute -top-16 -left-10 w-24 h-24 bg-purple-100 rounded-full z-0"></div>
                 <div className="absolute bottom-0 right-0 w-32 h-32 bg-purple-200 rounded-full z-0"></div>
 
-                {/* Wrapper botón + card */}
                 <div className="flex flex-col items-center w-full max-w-md">
-                    {/* Botón Regresar */}
                     <ButtonRegresar />
 
                     {/* Card del registro */}
@@ -140,7 +138,6 @@ function Register() {
                             </button>
                         </form>
 
-                        {/* Link a login */}
                         <div className="text-center mt-4 text-sm text-sec">
                             ¿Ya tienes una cuenta?{" "}
                             <Link

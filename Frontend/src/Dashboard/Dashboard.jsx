@@ -1,5 +1,5 @@
 // Dashboard.jsx
-import InformationCards from '../components/InformationCards';
+import InformationCards from '../Dashboard/InformationCards';
 import storeAuth from '../context/storeAuth';
 function Dashboard() {
   const nombre = storeAuth((state) => state.nombre);
